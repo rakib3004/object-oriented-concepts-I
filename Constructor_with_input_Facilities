@@ -101,10 +101,7 @@ class CalculationSystem {
         b=n;
 
         result_int=a+b;
-        System.out.println("Sum of two integer :");
-
-        System.out.println(result_int);
-
+        System.out.println("Sum of two integer : " + result_int);
 
     }
 
@@ -117,9 +114,9 @@ class CalculationSystem {
         c=x;
 
         result_int=a+b+c;
-        System.out.println("Sum of three integer :");
+        System.out.println("Sum of three integer : " + result_int);
 
-        System.out.println(result_int);
+       
 
     }
 
@@ -133,9 +130,9 @@ class CalculationSystem {
         d=y;
 
         result_int=a+b+c+d;
-        System.out.println("Sum of four integer :");
+        System.out.println("Sum of four integer : " + result_int );
 
-        System.out.println(result_int);
+      
 
     }
     CalculationSystem(double m,double n)
@@ -145,10 +142,9 @@ class CalculationSystem {
         q=n;
 
         result_double=p+q;
-        System.out.println("Sum of two double :");
+        System.out.println("Sum of two double : " + result_double );
 
-        System.out.println(result_double);
-
+        
 
     }
 
@@ -161,10 +157,9 @@ class CalculationSystem {
         r=x;
 
         result_double=p+q+r;
-        System.out.println("Sum of three double :");
+        System.out.println("Sum of three double : " + result_double);
 
-        System.out.println(result_double);
-
+       
     }
 
 
@@ -177,9 +172,9 @@ class CalculationSystem {
         s=y;
 
         result_double=p+q+r+s;
-        System.out.println("Sum of four double :");
+        System.out.println("Sum of four double :" + result_double);
 
-        System.out.println(result_double);
+       
 
     }
 
