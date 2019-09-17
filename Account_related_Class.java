@@ -2,6 +2,23 @@ package UserSection;
 
 
 import javax.swing.*;
+package UserSection;
+
+import javax.swing.*;
+
+public class BankingSystem {
+    public static void main(String[] args) {
+
+        Account user_account_1 = new Account("BSSE1129","IITDU","01736378019");
+
+        user_account_1.deposit(1500);
+        user_account_1.deposit(260);
+        JOptionPane.showMessageDialog(null,user_account_1.checkAccounNumber());
+        JOptionPane.showMessageDialog(null,user_account_1.checkBalance());
+
+    }
+}
+
 
 public class Account {
     private int accountHolderNumber;
@@ -84,15 +101,12 @@ this.accountHolderPhoto ="N/A";
         }
         else  {
             this.balance = this.balance + ammount ;
-            JOptionPane.showMessageDialog(null,"Withdraw Successful!!!!!!");
+            JOptionPane.showMessageDialog(null,"Deposit Successful!!!!!!");
             return  true ;
 
         }
 
-        double newBalance =this.balance;
 
-      newBalance = this.balance + ammount;
-      return false ;
     }
 
 
