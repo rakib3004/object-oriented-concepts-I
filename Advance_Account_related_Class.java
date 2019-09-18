@@ -32,28 +32,39 @@ public class BankMenu {
         array_0f_account[9] = new Account("Shifat","CSE_KUET","110971","@shifat","Computer Science");
 
 
-
     }
 
     public  void  account_info_show(){
         int inputAccountNumber ;
+
         String get_roll_string = JOptionPane.showInputDialog("Find the account number : ");
         inputAccountNumber = Integer.parseInt(get_roll_string);
 
 
 //        JOptionPane.showMessageDialog(null,array_0f_account[0].checkAccountNumber());
 //        JOptionPane.showMessageDialog(null,array_0f_account[1].checkAccountNumber());
-//        JOptionPane.showMessageDialog(null,array_0f_account[2].checkAccountNumber());
+//
        /* for (int counter =0;counter<3;counter++){
 
             JOptionPane.showMessageDialog(null,array_0f_account[counter].checkAccountHolderDetails());
         } */
+        int amount;
+        String input_from_user;
 
         for(Account temp_acoount : array_0f_account){
             if(temp_acoount!=null){
                 if(inputAccountNumber==temp_acoount.checkAccountNumber()) {
-                    JOptionPane.showMessageDialog(null, temp_acoount.checkAccountNumber());
+                    JOptionPane.showMessageDialog(null,"Your Account Number is :" + temp_acoount.checkAccountNumber());
                     JOptionPane.showMessageDialog(null, temp_acoount.checkAccountHolderDetails());
+                     input_from_user = JOptionPane.showInputDialog("Enter Your amount for deposit :");
+         amount = Integer.parseInt(input_from_user);
+                    temp_acoount.deposit(amount );
+                    JOptionPane.showMessageDialog(null,"Your Balance is :"+temp_acoount.checkBalance());
+                    input_from_user = JOptionPane.showInputDialog("Enter Your amount to withdraw :");
+        amount = Integer.parseInt(input_from_user);
+                    temp_acoount.withdraw(amount);
+        JOptionPane.showMessageDialog(null,"Your Balance is :"+temp_acoount.checkBalance());
+
                 }
                 else{
                     continue;
@@ -65,19 +76,13 @@ public class BankMenu {
                 break;
         }
 
-       /* String input_from_user = JOptionPane.showInputDialog("Enter Your amount for deposit :");
-        int amount = Integer.parseInt(input_from_user);
-        user_account_1.deposit(amount );
 
-        input_from_user = JOptionPane.showInputDialog("Enter Your amount to withdraw :");
-        amount = Integer.parseInt(input_from_user);
-        user_account_1.withdraw(amount);
+    }
 
-        JOptionPane.showMessageDialog(null,user_account_1.checkAccountHolderDetails());
-        JOptionPane.showMessageDialog(null,user_account_1.checkAccountNumber());
-        //JOptionPane.showMessageDialog(null,user_account_1.checkBalance());*/
+
     }
-    }
+
+
 
 public class Account {
     private int  accountHolderNumber ;
