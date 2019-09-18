@@ -20,17 +20,25 @@ public class BankMenu {
    private Account array_0f_account[] = new Account[10];
     public void account_initialization(){
 
-        Account user_account_1 = new Account("Rakib","Software Engineer","01736378019","@rakib","NDC");
-        Account user_account_2 = new Account("Shihab","Textile Engineer","01736458019","@shihab","JJBSMRGC");
-        array_0f_account[0] = user_account_1;
-        array_0f_account[1] = user_account_2;
-        array_0f_account[2] = new Account("Momen","Architect","017352468019","@momen","DPI");
+        array_0f_account[0] =  new Account("Zidan","ME_IUT","110962","@zidan","Mechanical");
+        array_0f_account[1] = new Account("Ainan","MME_BUET","110963","@ainan","Mechatronics");
+        array_0f_account[2] = new Account("Azim","SWE_KU","110964","@azim","Soil & Water");
+        array_0f_account[3] = new Account("Rakib","IIT_DU","110965","@rakib","Software");
+        array_0f_account[4] = new Account("Mahmud","CE_BUET","110966","@mahmud","Civil");
+        array_0f_account[5] = new Account("Saiful","YE_BUTEX","110967","@saiful","Yarn");
+        array_0f_account[6] = new Account("Alif","CSE_KUET","110968","@alif","Computer Science");
+        array_0f_account[7] = new Account("Tahmeed","IIT_DU","110969","@tahmeed","Software");
+        array_0f_account[8] = new Account("Niloy","IPE_BUTEX","110970","@niloy","Industrial Production");
+        array_0f_account[9] = new Account("Shifat","CSE_KUET","110971","@shifat","Computer Science");
+
 
 
     }
 
     public  void  account_info_show(){
-        int inputAccountNumber = 11803003;
+        int inputAccountNumber ;
+        String get_roll_string = JOptionPane.showInputDialog("Find the account number : ");
+        inputAccountNumber = Integer.parseInt(get_roll_string);
 
 
 //        JOptionPane.showMessageDialog(null,array_0f_account[0].checkAccountNumber());
