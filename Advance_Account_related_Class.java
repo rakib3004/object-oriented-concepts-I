@@ -7,25 +7,54 @@ import javax.swing.*;
 public class BankingSystem {
     public static void main(String[] args) {
 
-        Account user_account_1 = new Account("1129","4575","01736378019","user_photo","20161819");
-        Account user_account_2 = new Account("11227","4675","01736458019","user_photo1","10161819");
+     BankMenu agrani_bank_DU = new BankMenu();
+     agrani_bank_DU.account_initialization();
+     agrani_bank_DU.account_info_show();
+
+}
+}
 
 
-        Account array_0f_account[] = new Account[10];
 
+public class BankMenu {
+   private Account array_0f_account[] = new Account[10];
+    public void account_initialization(){
+
+        Account user_account_1 = new Account("Rakib","Software Engineer","01736378019","@rakib","NDC");
+        Account user_account_2 = new Account("Shihab","Textile Engineer","01736458019","@shihab","JJBSMRGC");
         array_0f_account[0] = user_account_1;
         array_0f_account[1] = user_account_2;
-        array_0f_account[2] = new Account("1427","44575","017352468019","user_photo12","10161789");
+        array_0f_account[2] = new Account("Momen","Architect","017352468019","@momen","DPI");
+
+
+    }
+
+    public  void  account_info_show(){
+        int inputAccountNumber = 11803003;
+
 
 //        JOptionPane.showMessageDialog(null,array_0f_account[0].checkAccountNumber());
 //        JOptionPane.showMessageDialog(null,array_0f_account[1].checkAccountNumber());
 //        JOptionPane.showMessageDialog(null,array_0f_account[2].checkAccountNumber());
-        for (int counter =0;counter<3;counter++){
+       /* for (int counter =0;counter<3;counter++){
+
             JOptionPane.showMessageDialog(null,array_0f_account[counter].checkAccountHolderDetails());
-        }
+        } */
 
         for(Account temp_acoount : array_0f_account){
-            JOptionPane.showMessageDialog(null,temp_acoount.checkAccountNumber());
+            if(temp_acoount!=null){
+                if(inputAccountNumber==temp_acoount.checkAccountNumber()) {
+                    JOptionPane.showMessageDialog(null, temp_acoount.checkAccountNumber());
+                    JOptionPane.showMessageDialog(null, temp_acoount.checkAccountHolderDetails());
+                }
+                else{
+                    continue;
+                }
+
+            }
+
+            else
+                break;
         }
 
        /* String input_from_user = JOptionPane.showInputDialog("Enter Your amount for deposit :");
@@ -40,13 +69,7 @@ public class BankingSystem {
         JOptionPane.showMessageDialog(null,user_account_1.checkAccountNumber());
         //JOptionPane.showMessageDialog(null,user_account_1.checkBalance());*/
     }
-}
-
-
-
-
-package UserSection;
-import javax.swing.*;
+    }
 
 public class Account {
     private int  accountHolderNumber ;
@@ -104,8 +127,8 @@ public class Account {
     }
 
 
-    public String  checkAccountNumber(){
-        return "Your Account Number is : "+ this.accountHolderNumber;
+    public int   checkAccountNumber(){
+        return  this.accountHolderNumber;
     }
 
     public  boolean withdraw(double amount){
@@ -138,4 +161,6 @@ public class Account {
         }
     }
 }
+
+
 
