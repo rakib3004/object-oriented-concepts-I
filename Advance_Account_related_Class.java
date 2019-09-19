@@ -1,7 +1,10 @@
+
+
 package UserSection;
 
 
 import javax.swing.*;
+
 
 
 public class BankingSystem {
@@ -11,16 +14,36 @@ public class BankingSystem {
      agrani_bank_DU.account_initialization();
      agrani_bank_DU.account_info_show();
 
+     UserMenu pickpoint = new UserMenu();
+     pickpoint.Interaction();
+
 }
 }
 
+package UserSection;
 
+import javax.swing.*;
 
 public class BankMenu {
-   private Account array_0f_account[] = new Account[10];
+   Account array_0f_account[] = new Account[10];
+    int parameter=0;
     public void account_initialization(){
 
-        array_0f_account[0] =  new Account("Zidan","ME_IUT","110962","@zidan","Mechanical");
+
+        String  name,address,phone,photo,user_NID;
+
+      name =  JOptionPane.showInputDialog("User Name");
+        address =  JOptionPane.showInputDialog("User Address");
+        phone =  JOptionPane.showInputDialog("User Phone");
+        photo =  JOptionPane.showInputDialog("User Photo");
+        user_NID =  JOptionPane.showInputDialog("User user_NID");
+
+        array_0f_account[parameter] =  new Account(name,address,phone,photo,user_NID);
+        parameter ++;
+
+
+
+       /* array_0f_account[0] =  new Account("Zidan","ME_IUT","110962","@zidan","Mechanical");
         array_0f_account[1] = new Account("Ainan","MME_BUET","110963","@ainan","Mechatronics");
         array_0f_account[2] = new Account("Azim","SWE_KU","110964","@azim","Soil & Water");
         array_0f_account[3] = new Account("Rakib","IIT_DU","110965","@rakib","Software");
@@ -29,7 +52,7 @@ public class BankMenu {
         array_0f_account[6] = new Account("Alif","CSE_KUET","110968","@alif","Computer Science");
         array_0f_account[7] = new Account("Tahmeed","IIT_DU","110969","@tahmeed","Software");
         array_0f_account[8] = new Account("Niloy","IPE_BUTEX","110970","@niloy","Industrial Production");
-        array_0f_account[9] = new Account("Shifat","CSE_KUET","110971","@shifat","Computer Science");
+        array_0f_account[9] = new Account("Shifat","CSE_KUET","110971","@shifat","Computer Science");*/
 
 
     }
@@ -82,7 +105,52 @@ public class BankMenu {
 
     }
 
+package UserSection;
 
+
+import javax.swing.*;
+
+public class UserMenu {
+
+    public  void  Interaction() {
+
+        BankMenu creat_menu = new BankMenu();
+        Account show_info = new Account();
+
+        int key_one;
+        int key_two;
+        String key_one_string;
+        JOptionPane.showMessageDialog(null, "Welcome to Meghna Bank Ltd.");
+
+        String menu1 = "1.Creat Account\n2.Show Infomation\n3.Show Balance\n4.Debit & Credit System\n5.Show Author Information";
+        key_one_string = JOptionPane.showInputDialog(null, "What do You Want ????\n" + menu1);
+        key_one = Integer.parseInt(key_one_string);
+
+        if(key_one==1){
+creat_menu.account_initialization();
+        }
+        else if(key_one==2){
+            creat_menu.account_info_show();
+        }
+        else if(key_one==3){
+            show_info.checkBalance();
+        }
+        else if(key_one==4){
+            key_one_string =   JOptionPane.showInputDialog(null,"What do you want???\n1.withdraw\n2.deposit");
+            if(key_one_string=="1"){
+                show_info.withdraw();
+            }
+            else if(key_one_string=="2"){
+                show_info.deposit();
+            }
+
+        }
+
+
+    }
+}
+package UserSection;
+import javax.swing.*;
 
 public class Account {
     private int  accountHolderNumber ;
@@ -99,6 +167,10 @@ public class Account {
         this.accountHolderNumber =   account_starting_range + accountCounter;
     }
 
+    public Account(){
+
+    }
+
   public  Account(String name ,String address ,String phone){
         this.accountHolderName =name;
         this.accountHolderAddress = address;
@@ -106,7 +178,7 @@ public class Account {
         this.accountHolderNID ="N/A";
 
       account_number_generator();
-        this.balance =12500.0;
+        this.balance =5000.0;
     }
     public  Account(String name ,String address ,String phone,String user_NID){
         this.accountHolderName =name;
@@ -115,7 +187,7 @@ public class Account {
         this.accountHolderNID =user_NID;
         this.accountHolderPhoto ="N/A";
         account_number_generator();
-        this.balance =0.0;
+        this.balance =5000.0;
     }
 
     public Account(String name ,String address ,String phone,String photo , String user_NID){
@@ -125,7 +197,7 @@ public class Account {
         this.accountHolderNID =user_NID;
         this.accountHolderPhoto =photo;
         account_number_generator();
-        this.balance =0.0;
+        this.balance =5000.0;
     }
 
 
@@ -144,36 +216,41 @@ public class Account {
         return  this.accountHolderNumber;
     }
 
-    public  boolean withdraw(double amount){
+    public  void withdraw(double amount){
         if(amount<=0.0){
             JOptionPane.showMessageDialog(null,"Enter Positive Amount");
-            return  false ;
+
         }
         else if(this.balance-amount<100){
             JOptionPane.showMessageDialog(null,"Balance Limit Cross");
-            return  false ;
         }
         else {
-            JOptionPane.showMessageDialog(null,"Withdraw Successful!!!!!!");
             this.balance = this.balance - amount ;
-            return  true ;
+            JOptionPane.showMessageDialog(null,"Withdraw Successful!!!!!!");
+
+            JOptionPane.showMessageDialog(null,"Your Balance is :" +this.balance);
+
         }
 
     }
 
-    public boolean deposit(double amount){
+    public double checkBalance(){
+
+        return  this.balance;
+    }
+
+    public void deposit(double amount){
 
         if(amount<=0.0){
             JOptionPane.showMessageDialog(null,"Enter Positive Amount");
-            return  false ;
         }
         else  {
             this.balance = this.balance + amount ;
             JOptionPane.showMessageDialog(null,"Deposit Successful!!!!!!");
-            return  true ;
+            JOptionPane.showMessageDialog(null,"Your Balance is :" +this.balance);
+
+
         }
     }
 }
-
-
 
