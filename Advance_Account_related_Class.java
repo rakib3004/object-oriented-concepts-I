@@ -1,7 +1,112 @@
 package UserSection;
-
+import jdk.nashorn.internal.scripts.JO;
 
 import javax.swing.*;
+
+public class Account {
+    private int  accountHolderNumber ;
+    private  String accountHolderName;
+    private   String accountHolderNID;
+    private  String accountHolderAddress;
+    private  String accountHolderPhone;
+    private  String accountHolderPhoto;
+    private  double balance;
+    private static int accountCounter = 0;
+    final  int account_starting_range = 11803000;
+    private void  account_number_generator(){
+        accountCounter++;
+        this.accountHolderNumber =   account_starting_range + accountCounter;
+    }
+
+    public Account(){
+
+    }
+
+    public  Account(String name ,String address ,String phone){
+        this.accountHolderName =name;
+        this.accountHolderAddress = address;
+        this.accountHolderPhone = phone;
+        this.accountHolderNID ="N/A";
+
+        account_number_generator();
+        this.balance =5000.0 +accountCounter*500.0;
+    }
+    public  Account(String name ,String address ,String phone,String user_NID){
+        this.accountHolderName =name;
+        this.accountHolderAddress = address;
+        this.accountHolderPhone = phone;
+        this.accountHolderNID =user_NID;
+        this.accountHolderPhoto ="N/A";
+        account_number_generator();
+        this.balance =5000.0+accountCounter*500.0;
+    }
+
+    public Account(String name ,String address ,String phone,String photo , String user_NID){
+        this.accountHolderName =name;
+        this.accountHolderAddress = address;
+        this.accountHolderPhone = phone;
+        this.accountHolderNID =user_NID;
+        this.accountHolderPhoto =photo;
+        account_number_generator();
+        this.balance =5000.0+accountCounter*500.0 ;
+    }
+
+
+    public String checkAccountHolderDetails(){
+        String user_details_message = "Name :" + this.accountHolderName +"\n"+
+                "Address :"+ this.accountHolderAddress +"\n"+
+                "Phone Number : "+  this.accountHolderPhone +"\n"+
+                "NID number : "+ this.accountHolderNID +"\n"+
+                "Holder Photo :"+  this.accountHolderPhoto ;
+        return   user_details_message ;
+    }
+
+
+    public int   checkAccountNumber(){
+        return  this.accountHolderNumber;
+    }
+
+    public  void withdraw(double amount){
+        if(amount<=0.0){
+            JOptionPane.showMessageDialog(null,"Enter Positive Amount");
+
+        }
+        else if(this.balance-amount<100){
+            JOptionPane.showMessageDialog(null,"Balance Limit Cross");
+        }
+        else {
+            this.balance = this.balance - amount ;
+            JOptionPane.showMessageDialog(null,"Withdraw Successful!!!!!!");
+
+
+        }
+
+    }
+
+    public double checkBalance(){
+
+        return  this.balance;
+    }
+
+    public void deposit(double amount){
+
+        if(amount<=0.0){
+            JOptionPane.showMessageDialog(null,"Enter Positive Amount");
+        }
+        else  {
+            this.balance = this.balance + amount ;
+            JOptionPane.showMessageDialog(null,"Deposit Successful!!!!!!");
+
+
+        }
+    }
+}
+
+package UserSection;
+
+
+        import javax.swing.*;
+
 
 
 
@@ -12,33 +117,30 @@ public class BankingSystem {
      agrani_bank_DU.account_initialization();
      agrani_bank_DU.account_info_show();*/
 
-     UserMenu pickpoint = new UserMenu();
-     pickpoint.Interaction();
+        UserMenu pickpoint = new UserMenu();
+        pickpoint.Interaction();
 
+    }
 }
-}
-
-
 package UserSection;
 
-import javax.swing.*;
+        import javax.swing.*;
 
 public class BankMenu {
-    Account array_0f_account[] = new Account[10];
+    Account array_0f_account[] = new Account[15];
     static int parameter = 7;
 
     public void account_initialization() {
 
 
         array_0f_account[0] = new Account("Zidan", "ME_IUT", "110962", "@zidan", "Mechanical");
-        array_0f_account[1] = new Account("Ainan", "MME_BUET", "110963", "@ainan", "Mechatronics");
+        array_0f_account[1] = new Account("Wasif", "CSE_JU", "110975", "@wasif", "Computer Science");
         array_0f_account[2] = new Account("Azim", "SWE_KU", "110964", "@azim", "Soil & Water");
         array_0f_account[3] = new Account("Rakib", "IIT_DU", "110965", "@rakib", "Software");
         array_0f_account[4] = new Account("Mahmud", "CE_BUET", "110966", "@mahmud", "Civil");
-        array_0f_account[5] = new Account("Saiful", "YE_BUTEX", "110967", "@saiful", "Yarn");
         array_0f_account[6] = new Account("Alif", "CSE_KUET", "110968", "@alif", "Computer Science");
         array_0f_account[7] = new Account("Tahmeed", "IIT_DU", "110969", "@tahmeed", "Software");
-        array_0f_account[8] = null;
+
         /* array_0f_account[9] = new Account("Shifat","CSE_KUET","110971","@shifat","Computer Science");*/
 
         String name, address, phone, photo, user_NID;
@@ -50,64 +152,51 @@ public class BankMenu {
         user_NID = JOptionPane.showInputDialog("User user_NID");
         parameter++;
         array_0f_account[parameter] = new Account(name, address, phone, photo, user_NID);
-
-
+        account_info_show();
     }
 
     public void account_info_show() {
-//        int inputAccountNumber;
+        int inputAccountNumber;
 
-//        String get_roll_string = JOptionPane.showInputDialog("Find the account number : ");
-//        inputAccountNumber = Integer.parseInt(get_roll_string);
-////
+        String get_roll_string = JOptionPane.showInputDialog("Find the account number : ");
+        inputAccountNumber = Integer.parseInt(get_roll_string);
 
-//        JOptionPane.showMessageDialog(null,array_0f_account[0].checkAccountNumber());
-//        JOptionPane.showMessageDialog(null,array_0f_account[1].checkAccountNumber());
-//
-       /* for (int counter =0;counter<3;counter++){
-//
-//            JOptionPane.showMessageDialog(null,array_0f_account[counter].checkAccountHolderDetails());
-//        } */
-//        int amount;
-//        String input_from_user;
-//
-//        for (Account temp_acoount : array_0f_account) {
-//                JOptionPane.showMessageDialog(null, "Hi ami rakib");
-//
-//                    JOptionPane.showMessageDialog(null, "BSSE in IIT");
-//
-///*
-//                    JOptionPane.showMessageDialog(null, "Your Account Number is :" + temp_acoount.checkAccountNumber());
-//*/
-//                    JOptionPane.showMessageDialog(null, temp_acoount.checkAccountHolderDetails());
-////                    input_from_user = JOptionPane.showInputDialog("Enter Your amount for deposit :");
-////                    amount = Integer.parseInt(input_from_user);
-////                    temp_acoount.deposit(amount);
-////                    JOptionPane.showMessageDialog(null, "Your Balance is :" + temp_acoount.checkBalance());
-////                    input_from_user = JOptionPane.showInputDialog("Enter Your amount to withdraw :");
-////                    amount = Integer.parseInt(input_from_user);
-////                    temp_acoount.withdraw(amount);
-////                    JOptionPane.showMessageDialog(null, "Your Balance is :" + temp_acoount.checkBalance());
-//
-//            }
+        int count,flag=0,iterator=0;
 
+        int amount;
+        String input_from_user;
+        for( count =0;array_0f_account[count]!=null;count++){
+            if(array_0f_account[count].checkAccountNumber()==inputAccountNumber){
 
+                iterator = count;
+                flag=1;
+                break;
+            }
+        }
+        if(flag==1){
+            JOptionPane.showMessageDialog(null,array_0f_account[iterator].checkAccountHolderDetails());
+            input_from_user = JOptionPane.showInputDialog("Enter Your amount for deposit :");
+            amount = Integer.parseInt(input_from_user);
+            array_0f_account[iterator].deposit(amount );
+            JOptionPane.showMessageDialog(null,"Your Balance is :"+array_0f_account[iterator].checkBalance());
+            input_from_user = JOptionPane.showInputDialog("Enter Your amount to withdraw :");
+            amount = Integer.parseInt(input_from_user);
+            array_0f_account[iterator].withdraw(amount);
+            JOptionPane.showMessageDialog(null,"Your Balance is :"+array_0f_account[iterator].checkBalance());
 
-        array_0f_account[2].checkAccountHolderDetails();
-        array_0f_account[3].checkAccountHolderDetails();
-        array_0f_account[4].checkAccountHolderDetails();
-        array_0f_account[5].checkAccountHolderDetails();
-
-
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Account not found");
         }
 
 
     }
+}
 
 package UserSection;
 
 
-import javax.swing.*;
+        import javax.swing.*;
 
 public class UserMenu {
 
@@ -117,7 +206,7 @@ public class UserMenu {
         Account show_info = new Account();
         BankingSystem bank =new BankingSystem();
         double amount;
-     String string_one,string_two,string_three;
+        String string_one,string_two,string_three;
         int key_one;
         int key_two;
         String key_one_string;
@@ -128,10 +217,10 @@ public class UserMenu {
         key_one = Integer.parseInt(key_one_string);
 
         if(key_one==1){
-creat_menu.account_initialization();
+            creat_menu.account_initialization();
         }
         else if(key_one==2){
-             creat_menu.account_info_show();
+            creat_menu.account_info_show();
 
         }
         else if(key_one==3){
@@ -159,112 +248,3 @@ creat_menu.account_initialization();
 
     }
 }
-
-
-package UserSection;
-import jdk.nashorn.internal.scripts.JO;
-
-import javax.swing.*;
-
-public class Account {
-    private int  accountHolderNumber ;
-     private  String accountHolderName;
-    private   String accountHolderNID;
-    private  String accountHolderAddress;
-    private  String accountHolderPhone;
-    private  String accountHolderPhoto;
-    private  double balance;
-    private static int accountCounter = 0;
-    final  int account_starting_range = 11803001;
-    private void  account_number_generator(){
-        accountCounter++;
-        this.accountHolderNumber =   account_starting_range + accountCounter;
-    }
-
-    public Account(){
-
-    }
-
-  public  Account(String name ,String address ,String phone){
-        this.accountHolderName =name;
-        this.accountHolderAddress = address;
-        this.accountHolderPhone = phone;
-        this.accountHolderNID ="N/A";
-
-      account_number_generator();
-        this.balance =5000.0 +accountCounter*500.0;
-    }
-    public  Account(String name ,String address ,String phone,String user_NID){
-        this.accountHolderName =name;
-        this.accountHolderAddress = address;
-        this.accountHolderPhone = phone;
-        this.accountHolderNID =user_NID;
-        this.accountHolderPhoto ="N/A";
-        account_number_generator();
-        this.balance =5000.0+accountCounter*500.0;
-    }
-
-    public Account(String name ,String address ,String phone,String photo , String user_NID){
-        this.accountHolderName =name;
-        this.accountHolderAddress = address;
-        this.accountHolderPhone = phone;
-        this.accountHolderNID =user_NID;
-        this.accountHolderPhoto =photo;
-        account_number_generator();
-        this.balance =5000.0+accountCounter*500.0 ;
-    }
-
-
-    public void checkAccountHolderDetails(){
-        String user_details_message = "Name :" + this.accountHolderName +"\n"+
-                "Address :"+ this.accountHolderAddress +"\n"+
-                "Phone Number : "+  this.accountHolderPhone +"\n"+
-                "NID number : "+ this.accountHolderNID +"\n"+
-                "Holder Photo :"+  this.accountHolderPhoto ;
-        JOptionPane.showMessageDialog(null,user_details_message);
-
-    }
-
-
-    public int   checkAccountNumber(){
-        return  this.accountHolderNumber;
-    }
-
-    public  void withdraw(double amount){
-        if(amount<=0.0){
-            JOptionPane.showMessageDialog(null,"Enter Positive Amount");
-
-        }
-        else if(this.balance-amount<100){
-            JOptionPane.showMessageDialog(null,"Balance Limit Cross");
-        }
-        else {
-            this.balance = this.balance - amount ;
-            JOptionPane.showMessageDialog(null,"Withdraw Successful!!!!!!");
-
-            JOptionPane.showMessageDialog(null,"Your Balance is :" +this.balance);
-
-        }
-
-    }
-
-    public double checkBalance(){
-
-        return  this.balance;
-    }
-
-    public void deposit(double amount){
-
-        if(amount<=0.0){
-            JOptionPane.showMessageDialog(null,"Enter Positive Amount");
-        }
-        else  {
-            this.balance = this.balance + amount ;
-            JOptionPane.showMessageDialog(null,"Deposit Successful!!!!!!");
-            JOptionPane.showMessageDialog(null,"Your Balance is :" +this.balance);
-
-
-        }
-    }
-}
-
