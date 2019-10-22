@@ -11,6 +11,7 @@ public class Bank {
 
 }
 
+
 package Test;
 
 import javax.swing.*;
@@ -34,23 +35,23 @@ public class BankMenu {
 
             if(iterator>=10)
             {
-                JOptionPane.showMessageDialog(null,"ACCOUNT LIMIT CROSSED\n");
+                JOptionPane.showMessageDialog(null,"Account Limit Crossed\n");
             }
 
 
             else{
 
-                name=JOptionPane.showInputDialog("ENTER YOUR NAME\n");
-                phone=JOptionPane.showInputDialog("ENTER YOUR PHONE NUMBER\n");
-                address=JOptionPane.showInputDialog("ENTER YOUR ADDRESS\n");
-                NID=JOptionPane.showInputDialog("ENTER NID\n");
+                name=JOptionPane.showInputDialog("Enter Your Name\n");
+                phone=JOptionPane.showInputDialog("Enter Your Phone Number\n");
+                address=JOptionPane.showInputDialog("Enter Your Address\n");
+                NID=JOptionPane.showInputDialog("Enter NID\n");
 
                 ArrayOfAccount[iterator]=new Account(name,address,phone,NID);
 
-                System.out.println("ACCOUT CREATED SUCCESSFULLY\n");
+                System.out.println("Account Created Successfully!!!!!\n");
 
                 JOptionPane.showMessageDialog(null,ArrayOfAccount[iterator].checkAccountHolderDetails());
-                JOptionPane.showMessageDialog(null,"BALANCE IS:"+ArrayOfAccount[iterator].checkBalance());
+                JOptionPane.showMessageDialog(null,"Balance is :"+ArrayOfAccount[iterator].checkBalance());
                 //JOptionPane.showMessageDialog(null,"ACCOUNT NUMBER IS "+ArrayOfAccount[iterator].checkAccountNumber()+" .\n");
 
                 iterator++;
@@ -72,13 +73,13 @@ public class BankMenu {
             String input_user,choice_1,amount_1,CHOICE;
 
 
-            input_user=JOptionPane.showInputDialog("ENTER YOUR ACCOUNT NUMBER\n");
+            input_user=JOptionPane.showInputDialog("Enter your account number\n");
             inputAccountNumber=Integer.parseInt(input_user);
 
 
             if(inputAccountNumber<10000)
             {
-                JOptionPane.showMessageDialog(null,"INVALID INPUT\n");
+                JOptionPane.showMessageDialog(null,"Invalid amount\n");
 
                 CHOICE=JOptionPane.showInputDialog("PRESS 1 TO CONTINUE\nPRESS 2 TO RETURN TO MAINMENU\n");
                 CHOICE_2=Integer.parseInt(CHOICE);
@@ -106,33 +107,33 @@ public class BankMenu {
                 if(marker==1)
                 {
 
-                    mark:choice_1=JOptionPane.showInputDialog("PRESS 1 TO SHOW ACCOUNT DETAILS\nPRESS 2 TO DEPOSIT\nPRESS 3 TO WITHDRAW CASH\n");
+                    mark:choice_1=JOptionPane.showInputDialog("1.Show Account Details\n2.Deposit\n3.Withdraw\n");
                     choice=Integer.parseInt(choice_1);
                     if(choice==1)
                     {
                         JOptionPane.showMessageDialog(null,ArrayOfAccount[temp].checkAccountHolderDetails());
-                        JOptionPane.showMessageDialog(null,"ACCOUNT BALANCE:"+ArrayOfAccount[temp].checkBalance());
+                        JOptionPane.showMessageDialog(null,"Account Balance:"+ArrayOfAccount[temp].checkBalance());
 
                     }
 
                     else if(choice==2)
                     {
-                        amount_1=JOptionPane.showInputDialog("ENTER AMOUNT\n");
+                        amount_1=JOptionPane.showInputDialog("Enter Balance :\n");
                         amount=Double.parseDouble(amount_1);
                         ArrayOfAccount[temp].deposit(amount);
-                        JOptionPane.showMessageDialog(null,"YOUR CURRENT BALANCE:"+ArrayOfAccount[temp].checkBalance());
+                        JOptionPane.showMessageDialog(null,"Current Balance :"+ArrayOfAccount[temp].checkBalance());
                     }
                     else if(choice==3)
                     {
-                        amount_1=JOptionPane.showInputDialog("ENTER AMOUNT\n");
+                        amount_1=JOptionPane.showInputDialog("Enter Amount :\n");
                         amount=Double.parseDouble(amount_1);
                         ArrayOfAccount[temp].withDraw(amount);
-                        JOptionPane.showMessageDialog(null,"YOUR CURRENT BALANCE:"+ArrayOfAccount[temp].checkBalance());
+                        JOptionPane.showMessageDialog(null,"Current Balance:"+ArrayOfAccount[temp].checkBalance());
 
                     }
 
 
-                    CHOICE=JOptionPane.showInputDialog("PRESS 1 TO CONTINUE\nPRESS 2 TO RETURN TO MAINMENU\n");
+                    CHOICE=JOptionPane.showInputDialog("1.Continue\n2.Return to back\n");
                     CHOICE_2=Integer.parseInt(CHOICE);
                     if(CHOICE_2==1)
                     {
@@ -148,12 +149,12 @@ public class BankMenu {
 
                 else if(marker==0)
                 {
-                    JOptionPane.showMessageDialog(null,"ACCOUNT NOT FOUND\n");
+                    JOptionPane.showMessageDialog(null,"Account not found!!!!\n");
 
 
 
 
-                    CHOICE=JOptionPane.showInputDialog("PRESS 1 TO CONTINUE\nPRESS 2 TO RETURN TO MAINMENU\n");
+                    CHOICE=JOptionPane.showInputDialog("1.Continue\n2.Return to back\n");
                     CHOICE_2=Integer.parseInt(CHOICE);
                     if(CHOICE_2==1)
                     {
@@ -189,7 +190,7 @@ public class BankMenu {
             int choice;
             String choice_2;
 
-            choice_2=JOptionPane.showInputDialog("PRESS 1 TO CREATE A NEW ACCOUNT\nPRESS 2 TO SHOW ALL ACCOUNT DETAILS\nPRESS 3 TO ACCESS PARTICUL ACCOUNT\nPRESS ANY KEY TO QUIT\n");
+            choice_2=JOptionPane.showInputDialog("1.Create New Account \n2.Show All Account Details \n3.Show Particular Account Details \n4.Quit\n");
 
 
             choice=Integer.parseInt(choice_2);
@@ -218,9 +219,6 @@ public class BankMenu {
 
         }
     }
-
-
-
 
 package Test;
 
@@ -316,21 +314,21 @@ public class Account {
     {
         if(amount<=0)
         {
-            JOptionPane.showMessageDialog(null,"ENTER POSITIVE NUMBER");
+            JOptionPane.showMessageDialog(null,"Enter Positive Number");
 
             return false;
         }
 
         else if(balance-amount<100)
         {
-            JOptionPane.showMessageDialog(null,"BALANCE LIMIT CROSSED");
+            JOptionPane.showMessageDialog(null,"Balance Limit Crossed");
             return false;
         }
 
         else
         {
             balance=balance-amount;
-            JOptionPane.showMessageDialog(null,"WITHDRAWAL SUCCESSFUL\n");
+            JOptionPane.showMessageDialog(null,"Withdraw Successful\n");
             return true;
         }
 
@@ -341,17 +339,19 @@ public class Account {
     {
         if(amount<0)
         {
-            JOptionPane.showMessageDialog(null,"ENTER A POSITIVE AMOUNT");
+            JOptionPane.showMessageDialog(null,"Enter a positive amount");
             return false;
         }
 
         else
         {
             balance=balance+amount;
-            JOptionPane.showMessageDialog(null,"DEPOSIT SUCCESSFUL\n");
+            JOptionPane.showMessageDialog(null,"Deposit Successful\n");
             return true;
         }
 
 
     }
+
+
 }
