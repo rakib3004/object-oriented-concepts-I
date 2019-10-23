@@ -2,108 +2,153 @@ package Main;
 
 import E_Shop_Management.*;
 
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
 public class MainClass {
 
     public static void main(String[] args) {
-        Person person = new Person("Asif");
-        Customer customer = new Customer();
-        Employee employee = new Employee();
-        Manager manager = new Manager();
-        SalesPerson salesPerson = new SalesPerson();
-        Secretary secretary = new Secretary();
+        Manager manager = new Manager("M1001", 35000, "Noushaw Nuhash", 20000);
 
 
-        JOptionPane.showMessageDialog(null,person.getName());
+        JOptionPane.showMessageDialog(null,"Manager Name :"+ manager.getName());
+        JOptionPane.showMessageDialog(null,"Manager Basic Salary :"+ manager.getBasic_salary());
+        JOptionPane.showMessageDialog(null, "Manager Payment :"+manager.getPay());
+
         int side = 55;
 
         int side2=45;
 
-        double xolume = Math.sqrt(Math.pow(side,2))- Math.sqrt(Math.pow(side2,2));
-
+        double volume = Math.sqrt(Math.pow(side,2))- Math.sqrt(Math.pow(side2,2));
+    JOptionPane.showMessageDialog(null,"The volume of the office: "+volume);
 
 
     }
 }
+
+
+
+
+
 package E_Shop_Management;
 
 public abstract class Person {
 
-    protected String name ;
+    private String name ;
 
     Person(String name){
         this.name = name ;
 
     }
     public String getName() {
-        return name;
+        return this.name;
     }
     public abstract double getPay();
 
 }
+
+
+
 package E_Shop_Management;
 
-public class Customer extends Person {
+public abstract class Customer extends Person {
 
-    protected String address ;
-    protected float budget;
-    public Customer(String address,float budget,String  name){
+    private String address ;
+    private double budget;
+    public Customer(String  name,String address,double budget){
         super(name);
+        this.address = address;
+        this.budget  = budget;
     }
     public String getAddress() {
         return address;
     }
 
-    public float getBudget() {
+    public double getBudget() {
         return budget;
     }
     public void purchase(){
 
     }
 }
+
+
 package E_Shop_Management;
 
-public class Employee {
+public abstract class Employee extends Person {
 
     private String employee_number;
-    private float basic_salary;
-    public Employee(){
-
+    private double basic_salary;
+    public Employee(String employee_number,double basic_salary,String name){
+        super(name);
+        this.employee_number = employee_number;
+        this.basic_salary =basic_salary;
     }
 
+    public String getEmployee_number(){
+return this.employee_number;
+    }
+
+    public double getBasic_salary() {
+        return this.basic_salary;
+    }
+  public   abstract double getPay();
 }
+
+
+
 package E_Shop_Management;
 
 public class Manager extends Employee {
-    protected float allowance;
-    public Manager(String employee_number,float basic_salary,String name,float allowance){
+    private double allowance;
+    public Manager(String employee_number,double basic_salary,String name,float allowance){
         super(employee_number,basic_salary,name);
         this.allowance = allowance;
     }
 
-    public float getAllowance() {
+    public double getAllowance() {
         return allowance;
     }
+    @Override
+    public double getPay(){
+        return getBasic_salary() + getAllowance();
+    }
 }
+
+
 package E_Shop_Management;
 
 public class SalesPerson extends Employee {
-    protected float commission;
+    private double commission;
 
-    protected float getCommission() {
-        return commission;
+    public SalesPerson(String employee_number,double basic_salary,String name,double commission) {
+        super(employee_number, basic_salary, name);
+        this.commission = commission;
+    }
+    private double getCommission() {
+        return this.commission;
+    }
+    @Override
+    public double getPay(){
+        return getBasic_salary() + getCommission()*1.5;
     }
 
     public void take_order(){
 
     }
 }
- package E_Shop_Management;
+
+
+
+package E_Shop_Management;
 
 public class Secretary  extends Employee{
-    public Secretary(){
-        super();
-
+    public Secretary(String employee_number,double basic_salary,String name) {
+        super(employee_number, basic_salary, name);
     }
-}
+@Override
+        public double getPay(){
+    return getBasic_salary();
+        }
+    }
+
+
