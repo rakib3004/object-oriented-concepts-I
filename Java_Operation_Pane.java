@@ -6,7 +6,7 @@ public class MainClass {
     
     
      public static void main(String[] args) {
-        Scanner putting = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         
         NumberProcessing processing_unit_1;
         int result;
