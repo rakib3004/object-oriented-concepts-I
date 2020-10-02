@@ -2,7 +2,7 @@ package src.AdditionSystem;
 
 import java.util.Scanner;
 import javax.swing.JOptionPane;
-public class MainClass {
+public class AdditionCalculator {
 
     public static void main (String[] args) {
         Scanner scan= new Scanner(System.in);
@@ -103,21 +103,21 @@ public class MainClass {
 
 }
 
-public  class CalculationSystem {
+public  class staticCalculationSystem {
        int a,b,c,d;
     double p,q,r,s;
     int result_int;
     double result_double;
 
 
-    CalculationSystem(int m,int n)
+    staticCalculationSystem(int m,int n)
     {
         a=m;
         b=n;
 
         result_int=a+b;         
    }
-    CalculationSystem(int m,int n,int x)
+    staticCalculationSystem(int m,int n,int x)
     {
     a=m;
         b=n;
@@ -126,7 +126,7 @@ public  class CalculationSystem {
         JOptionPane.showMessageDialog(null,"Sum of three integer : " + result_int);     
 
     }
-    CalculationSystem(int m,int n,int x,int y)
+    staticCalculationSystem(int m,int n,int x,int y)
     {    a=m;
         b=n;
         c=x;
@@ -134,7 +134,7 @@ public  class CalculationSystem {
         result_int=a+b+c+d;        
          JOptionPane.showMessageDialog(null,"Sum of four integer : " + result_int);             
     }
-    CalculationSystem(double m,double n)
+    staticCalculationSystem(double m,double n)
     {
         p=m;
         q=n;
@@ -143,7 +143,7 @@ public  class CalculationSystem {
         JOptionPane.showMessageDialog(null,"Sum of two double : " + result_double );      
     }
 
-    CalculationSystem(double m,double n,double x)
+    staticCalculationSystem(double m,double n,double x)
     {
         p=m;
         q=n;
@@ -153,7 +153,7 @@ public  class CalculationSystem {
       
     }
 
-    CalculationSystem(double m,double n,double x,double y)
+    staticCalculationSystem(double m,double n,double x,double y)
     {
         p=m;
         q=n;
