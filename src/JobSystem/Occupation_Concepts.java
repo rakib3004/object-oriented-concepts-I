@@ -1,6 +1,6 @@
 //main class
 
-package Occupation;
+package src.JobSystem;
 
 public class MainClass {
     public static void main(String[] args) {

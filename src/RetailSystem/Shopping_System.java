@@ -1,4 +1,4 @@
-package Main;
+package src.RetailSystem;
 
 import E_Shop_Management.*;
 

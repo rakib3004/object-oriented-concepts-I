@@ -1,6 +1,6 @@
 //Main Class
 
-package Main;
+package src.RetailSystem;
 
 import ShapeSystem.MyCircle;
 import ShapeSystem.MyPoint;
