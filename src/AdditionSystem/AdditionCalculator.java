@@ -103,7 +103,7 @@ public class AdditionCalculator {
 
 }
 
-public  class staticCalculationSystem {
+class staticCalculationSystem {
        int a,b,c,d;
     double p,q,r,s;
     int result_int;
