@@ -1,5 +1,5 @@
 //main class
-package AccountManagementSystem;
+package src.LibraryManagement;
 import javax.swing.*;
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
