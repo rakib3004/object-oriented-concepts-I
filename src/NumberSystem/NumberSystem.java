@@ -1,3 +1,5 @@
+package src.NumberSystem;
+
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
