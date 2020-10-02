@@ -1,7 +1,7 @@
 package src.AdditionSystem;
 
 import java.util.Scanner;
-public class MainClass {
+public class MultiVariableAddition {
 
     public static void main (String[] args) {
         Scanner scan= new Scanner(System.in);
@@ -77,62 +77,62 @@ public class MainClass {
 
     }
 
+    public static class CalculationSystem {
+
+        int a, b, c, d;
+        double p, q, r, s;
+        int result_int;
+        double result_double;
+
+        CalculationSystem(int m, int n) {
+            a = m;
+            b = n;
+            result_int = a + b;
+            System.out.println("Sum of two integer : " + result_int);
+        }
+
+        CalculationSystem(int m, int n, int x) {
+            a = m;
+            b = n;
+            c = x;
+            result_int = a + b + c;
+            System.out.println("Sum of three integer : " + result_int);
+
+        }
+
+        CalculationSystem(int m, int n, int x, int y) {
+            a = m;
+            b = n;
+            c = x;
+            d = y;
+            result_int = a + b + c + d;
+            System.out.println("Sum of four integer : " + result_int);
+
+        }
+
+        CalculationSystem(double m, double n) {
+            p = m;
+            q = n;
+            result_double = p + q;
+            System.out.println("Sum of two double : " + result_double);
+        }
+
+        CalculationSystem(double m, double n, double x) {
+            p = m;
+            q = n;
+            r = x;
+            result_double = p + q + r;
+            System.out.println("Sum of three double : " + result_double);
+        }
+
+        CalculationSystem(double m, double n, double x, double y) {
+            p = m;
+            q = n;
+            r = x;
+            s = y;
+            result_double = p + q + r + s;
+            System.out.println("Sum of four double :" + result_double);
+        }
+    }
 }
 
-class CalculationSystem {
-
-    int a,b,c,d;
-    double p,q,r,s;
-    int result_int;
-    double result_double;
-    CalculationSystem(int m,int n)
-    {   a=m;
-        b=n;
-        result_int=a+b;
-        System.out.println("Sum of two integer : " + result_int);
-    }
-    CalculationSystem(int m,int n,int x)
-    {   a=m;
-        b=n;
-        c=x;
-        result_int=a+b+c;
-        System.out.println("Sum of three integer : " + result_int);   
-
-    }
-    CalculationSystem(int m,int n,int x,int y)
-    {
-        a=m;
-        b=n;
-        c=x;
-        d=y;
-        result_int=a+b+c+d;
-        System.out.println("Sum of four integer : " + result_int );     
-
-    }
-    
-    CalculationSystem(double m,double n)    {
-        p=m;
-        q=n;
-        result_double=p+q;
-        System.out.println("Sum of two double : " + result_double );   
-    }
-
-    CalculationSystem(double m,double n,double x)
-    {
-        p=m;
-        q=n;
-        r=x;
-        result_double=p+q+r;
-        System.out.println("Sum of three double : " + result_double);       
-    }
-    
-    CalculationSystem(double m,double n,double x,double y)
-    {
-        p=m;
-        q=n;
-        r=x;
-        s=y;
-        result_double=p+q+r+s;
-        System.out.println("Sum of four double :" + result_double);    
-    }
-        }

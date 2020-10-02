@@ -2,20 +2,20 @@ package src.AdditionSystem;
 
 import java.util.Scanner;
 
-public class MainClass {
+public class MainClass2 {
     public static void main (String[] args) {
         Scanner scan= new Scanner(System.in);
-         CalculationSystem cal1 = new CalculationSystem(45,64);
-         CalculationSystem cal2 = new CalculationSystem(78,64,45);
-         CalculationSystem cal3 = new CalculationSystem(45,64,45,75);
-         CalculationSystem cal4 = new CalculationSystem(45.45,64.5245);
-         CalculationSystem cal5 = new CalculationSystem(45.454,64.57,44.44);
-         CalculationSystem cal6 = new CalculationSystem(45.545,64.45,24.524,45.44);
+         MultiVariableAddition.CalculationSystem cal1 = new MultiVariableAddition.CalculationSystem(45,64);
+         MultiVariableAddition.CalculationSystem cal2 = new MultiVariableAddition.CalculationSystem(78,64,45);
+         MultiVariableAddition.CalculationSystem cal3 = new MultiVariableAddition.CalculationSystem(45,64,45,75);
+         MultiVariableAddition.CalculationSystem cal4 = new MultiVariableAddition.CalculationSystem(45.45,64.5245);
+         MultiVariableAddition.CalculationSystem cal5 = new MultiVariableAddition.CalculationSystem(45.454,64.57,44.44);
+         MultiVariableAddition.CalculationSystem cal6 = new MultiVariableAddition.CalculationSystem(45.545,64.45,24.524,45.44);
     }
       }
       
       
- class CalculationSystem {
+  class CalculationSystem {
 
     int a,b,c,d;
     double p,q,r,s;

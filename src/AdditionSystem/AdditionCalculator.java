@@ -28,7 +28,7 @@ public class MainClass {
              a1 =  Integer.parseInt(i);
               i = JOptionPane.showInputDialog("Choose second integer : ");
                b1 = Integer.parseInt(i);
-                CalculationSystem cal1 = new CalculationSystem(a1,b1);
+                MultiVariableAddition.CalculationSystem cal1 = new MultiVariableAddition.CalculationSystem(a1,b1);
             }
             else if(ab==3)
             {
@@ -38,7 +38,7 @@ public class MainClass {
                b1 =  Integer.parseInt(i);
                i = JOptionPane.showInputDialog("Choose third integer : ");
               c1 =  Integer.parseInt(i);
-                CalculationSystem cal2 = new CalculationSystem(a1,b1,c1);
+                MultiVariableAddition.CalculationSystem cal2 = new MultiVariableAddition.CalculationSystem(a1,b1,c1);
             }
             else if(ab==4)
             {
@@ -50,7 +50,7 @@ public class MainClass {
              c1 = Integer.parseInt(i);
                i = JOptionPane.showInputDialog("Choose forth integer : ");
                d1 =  Integer.parseInt(i);
-                CalculationSystem cal3 = new CalculationSystem(a1,b1,c1,d1);
+                MultiVariableAddition.CalculationSystem cal3 = new MultiVariableAddition.CalculationSystem(a1,b1,c1,d1);
             }
                     }
         if(option==2)
@@ -67,7 +67,7 @@ public class MainClass {
               
               i =  JOptionPane.showInputDialog("Choose second double number : ");
              q1 =  Double.parseDouble(i);          
-              CalculationSystem cal4 = new CalculationSystem(p1,q1);
+              MultiVariableAddition.CalculationSystem cal4 = new MultiVariableAddition.CalculationSystem(p1,q1);
             }
             else if(ab==3)
             {                
@@ -79,7 +79,7 @@ public class MainClass {
              
               i =  JOptionPane.showInputDialog("Choose third double number : ");
              r1 =  Double.parseDouble(i);               
-                CalculationSystem cal5 = new CalculationSystem(p1,q1,r1);
+                MultiVariableAddition.CalculationSystem cal5 = new MultiVariableAddition.CalculationSystem(p1,q1,r1);
             }
             else if(ab==4)
             {              
@@ -94,7 +94,7 @@ public class MainClass {
              
              i =  JOptionPane.showInputDialog("Choose forth double number : ");
              s1 =  Double.parseDouble(i);                
-                CalculationSystem cal6 = new CalculationSystem(p1,q1,r1,s1);
+                MultiVariableAddition.CalculationSystem cal6 = new MultiVariableAddition.CalculationSystem(p1,q1,r1,s1);
             }
 
         }
@@ -103,7 +103,7 @@ public class MainClass {
 
 }
 
-class CalculationSystem {    
+public  class CalculationSystem {
        int a,b,c,d;
     double p,q,r,s;
     int result_int;
