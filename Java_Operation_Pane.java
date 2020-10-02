@@ -4,7 +4,6 @@ import javax.swing.JOptionPane;
 
 public class MainClass {
     
-    
      public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
@@ -32,10 +31,8 @@ public class MainClass {
      }    
 }
 
-public class NumberProcessing {          
-    public NumberProcess()
-    
-    {
+ class NumberProcessing {
+    public NumberProcessing() {
           
     }
         

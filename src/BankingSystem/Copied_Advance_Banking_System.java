@@ -1,6 +1,6 @@
 
 
-package Test;
+package src.BankingSystem;
 
 import javax.swing.*;
 
