@@ -1,4 +1,4 @@
-package src;
+package src.BankingSystem;
 import javax.swing.*;
 public class Account {
     private int  accountHolderNumber ;
