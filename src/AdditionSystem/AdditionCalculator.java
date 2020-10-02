@@ -103,21 +103,21 @@ public class AdditionCalculator {
 
 }
 
-class staticCalculationSystem {
+class CalculationModule {
        int a,b,c,d;
     double p,q,r,s;
     int result_int;
     double result_double;
 
 
-    staticCalculationSystem(int m,int n)
+    CalculationModule(int m, int n)
     {
         a=m;
         b=n;
 
         result_int=a+b;         
    }
-    staticCalculationSystem(int m,int n,int x)
+    CalculationModule(int m, int n, int x)
     {
     a=m;
         b=n;
@@ -126,7 +126,7 @@ class staticCalculationSystem {
         JOptionPane.showMessageDialog(null,"Sum of three integer : " + result_int);     
 
     }
-    staticCalculationSystem(int m,int n,int x,int y)
+    CalculationModule(int m, int n, int x, int y)
     {    a=m;
         b=n;
         c=x;
@@ -134,7 +134,7 @@ class staticCalculationSystem {
         result_int=a+b+c+d;        
          JOptionPane.showMessageDialog(null,"Sum of four integer : " + result_int);             
     }
-    staticCalculationSystem(double m,double n)
+    CalculationModule(double m, double n)
     {
         p=m;
         q=n;
@@ -143,7 +143,7 @@ class staticCalculationSystem {
         JOptionPane.showMessageDialog(null,"Sum of two double : " + result_double );      
     }
 
-    staticCalculationSystem(double m,double n,double x)
+    CalculationModule(double m, double n, double x)
     {
         p=m;
         q=n;
@@ -153,7 +153,7 @@ class staticCalculationSystem {
       
     }
 
-    staticCalculationSystem(double m,double n,double x,double y)
+    CalculationModule(double m, double n, double x, double y)
     {
         p=m;
         q=n;

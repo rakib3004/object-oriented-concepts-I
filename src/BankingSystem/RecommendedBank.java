@@ -1,10 +1,11 @@
+/*
 
 
 package src.BankingSystem;
 
 import javax.swing.*;
 
-public class Bank {
+public class RecommendedBank {
     public static void main(String[] args)
     {
         BankMenu AgraniBank=new BankMenu();
@@ -13,11 +14,7 @@ public class Bank {
     }
 }
 
-package Test;
 
-        import jdk.nashorn.internal.scripts.JO;
-
-        import javax.swing.*;
 
 public class BankMenu {
 
@@ -369,9 +366,8 @@ public class BankMenu {
 
 
 
-import javax.swing.*;
 
-public class Account {
+ class Account {
 
     private int accountNumber;
     private String Account_Holder_Name;
@@ -509,3 +505,4 @@ public String checkAddress(){
 
 
 }
+*/

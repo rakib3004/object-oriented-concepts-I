@@ -100,8 +100,6 @@ public class Account {
     }
 }
 
-package UserSection;
-        import javax.swing.*;
 
 public class BankingSystem {
     public static void main(String[] args) {
