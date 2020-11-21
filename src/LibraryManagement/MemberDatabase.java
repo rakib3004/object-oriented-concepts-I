@@ -59,7 +59,7 @@ public class MemberDatabase {
         /* String registerMembers_info = "Register Member are  :\n";*/
         int count = 1;
         for (RegisterMember registerMembers_data : registerMembers_array) {
-            JOptionPane.showMessageDialog(null, "Member No :" + count + ". " + registerMembers_data.getName());
+            JOptionPane.showMessageDialog(null, "Member No :" + count + ". " + registerMembers_data.getAccountNumber());
             count++;
         }
 
