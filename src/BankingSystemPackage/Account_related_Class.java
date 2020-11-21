@@ -1,4 +1,4 @@
-package src.BankingSystem;
+package src.BankingSystemPackage;
 import javax.swing.*;
 
 

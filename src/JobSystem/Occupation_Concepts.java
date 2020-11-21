@@ -2,7 +2,7 @@
 
 package src.JobSystem;
 
-public class MainClass {
+class MainClass {
     public static void main(String[] args) {
         System.out.println("Hello My System");
     }
@@ -203,7 +203,7 @@ public class MainClass {
 //agri_bussiness class
 
 
-public class AgriBussiness extends Rural {
+ class AgriBussiness extends Rural {
     private String bussinessType;
     private char bussinessSize;
     public  AgriBussiness(){
@@ -233,9 +233,8 @@ this.bussinessType = bussinessType;
 
 //dairy farm class
 
-package Occupation;
 
-public class DairyFarm extends AgriBussiness {
+ class DairyFarm extends AgriBussiness {
     private double farmArea;
    private int  blockSize ;
    private  int dairyCount;
@@ -294,9 +293,8 @@ public  void  setCost(double cost){
 
 //poultry farm class
 
-package Occupation;
 
-public class PoultryFarm extends  AgriBussiness {
+ class PoultryFarm extends  AgriBussiness {
     private double farmArea;
     private int  rowSize ;
     private  int poultryCount;
@@ -359,9 +357,8 @@ this.lightNumber= lightNumber;
 //govt officer class
 
 
-package Occupation;
 
-public class GovtOfficer extends  Rural {
+ class GovtOfficer extends  Rural {
 
     private String officeName;
     private String title;
@@ -408,9 +405,8 @@ public class GovtOfficer extends  Rural {
 
 // bussiness man class
 
-package Occupation;
 
-public class BussinessMan extends Urban {
+ class BussinessMan extends Urban {
     private  String companyName;
     private  int employeeNumber;
     private double income;
@@ -455,9 +451,8 @@ public class BussinessMan extends Urban {
 }
 
 // doctor class
-package Occupation;
 
-public class Doctor extends  Urban {
+ class Doctor extends  Urban {
 
     private String hospitalName;
     private int patientNumber;
@@ -509,9 +504,8 @@ public class Doctor extends  Urban {
 
 // teacher class
 
-package Occupation;
 
-public class Teacher extends  Urban {
+ class Teacher extends  Urban {
 
     private  int experience;
     private  String qualification;
@@ -553,9 +547,8 @@ this.payment= payment;
 
 //college class
 
-package Occupation;
 
-public class College extends  Teacher {
+ class College extends  Teacher {
 
     private  String  collegeName;
     private  String subjectName;
@@ -584,9 +577,8 @@ this.subjectName = subjectName;
 }
 
 // university class
-package Occupation;
 
-public class University extends  Teacher {
+ class University extends  Teacher {
 
     private  String universityName;
     private  String departmentName;

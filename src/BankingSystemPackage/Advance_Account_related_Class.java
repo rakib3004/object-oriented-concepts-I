@@ -1,4 +1,4 @@
-package src.BankingSystem;
+package src.BankingSystemPackage;
 import javax.swing.*;
 public class Account {
     private int  accountHolderNumber ;
@@ -101,7 +101,7 @@ public class Account {
 }
 
 
-class BankingSystem {
+class BankingSystemAutomation {
     public static void main(String[] args) {
 
         UserMenu pickpoint = new UserMenu();
@@ -138,7 +138,7 @@ class BankingSystem {
     int count=0,flag=0;
     double amount;
     String input_from_user;
-    BankingSystem bank =new BankingSystem();
+    BankingSystemAutomation bank =new BankingSystemAutomation();
     private static int parameter = 7;
     int inputAccountNumber;
     public  void set_account(){
@@ -290,7 +290,7 @@ class BankingSystem {
 
         BankMenu creat_menu = new BankMenu();
         Account show_info = new Account();
-        BankingSystem bank =new BankingSystem();
+        BankingSystemAutomation bank =new BankingSystemAutomation();
         double amount;
         String string_one,string_two,string_three;
         int key_one;
