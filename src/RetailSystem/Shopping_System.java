@@ -1,14 +1,10 @@
 package src.RetailSystem;
 
-
-
 import javax.swing.JOptionPane;
-
-public class MainClass {
+public class ShoppingSys {
 
     public static void main(String[] args) {
         Manager manager = new Manager("M1001", 35000, "Noushaw Nuhash", 20000);
-
 
         JOptionPane.showMessageDialog(null,"Manager Name :"+ manager.getName());
         JOptionPane.showMessageDialog(null,"Manager Basic Salary :"+ manager.getBasic_salary());
@@ -21,10 +17,8 @@ public class MainClass {
         double volume = Math.sqrt(Math.pow(side,2))- Math.sqrt(Math.pow(side2,2));
     JOptionPane.showMessageDialog(null,"The volume of the office: "+volume);
 
-
     }
 }
-
 
  abstract class Person {
 
@@ -40,9 +34,6 @@ public class MainClass {
     public abstract double getPay();
 
 }
-
-
-
 
  abstract class Customer extends Person {
 
@@ -65,8 +56,6 @@ public class MainClass {
     }
 }
 
-
-
  abstract class Employee extends Person {
 
     private String employee_number;
@@ -87,9 +76,6 @@ return this.employee_number;
   public   abstract double getPay();
 }
 
-
-
-
  class Manager extends Employee {
     private double allowance;
     public Manager(String employee_number,double basic_salary,String name,float allowance){
@@ -105,7 +91,6 @@ return this.employee_number;
         return getBasic_salary() + getAllowance();
     }
 }
-
 
  class SalesPerson extends Employee {
     private double commission;
@@ -127,7 +112,6 @@ return this.employee_number;
     }
 }
 
-
  class Secretary  extends Employee{
     public Secretary(String employee_number,double basic_salary,String name) {
         super(employee_number, basic_salary, name);
@@ -137,5 +121,3 @@ return this.employee_number;
     return getBasic_salary();
         }
     }
-
-

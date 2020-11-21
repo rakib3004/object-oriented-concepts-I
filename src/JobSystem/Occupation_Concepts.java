@@ -2,7 +2,7 @@
 
 package src.JobSystem;
 
-class MainClass {
+public class MainClass {
     public static void main(String[] args) {
         System.out.println("Hello My System");
     }
@@ -203,34 +203,6 @@ class MainClass {
 //agri_bussiness class
 
 
- class AgriBussiness extends Rural {
-    private String bussinessType;
-    private char bussinessSize;
-    public  AgriBussiness(){
-
-    }
-    public AgriBussiness(String name , int age , char gender, String residentialType, String districtName, String villageName, String occupationName,String bussinessType,char bussinessSize){
-        super(name,age,gender,residentialType,districtName,villageName,occupationName);
-        this.bussinessType = bussinessType;
-this.bussinessSize = bussinessSize;
-    }
-    public String getBussinessType(){
-        return this.bussinessType = bussinessType;
-    }
-    public void setBussinessType(String bussinessType){
-this.bussinessType = bussinessType;
-    }
-    public char getBussinessSize(){
-        return this.bussinessSize;
-    }
-    public void setBussinessSize(){
-        this.bussinessSize = bussinessSize;
-    }
-}
-
-
-
-
 //dairy farm class
 
 
@@ -406,50 +378,6 @@ this.lightNumber= lightNumber;
 // bussiness man class
 
 
- class BussinessMan extends Urban {
-    private  String companyName;
-    private  int employeeNumber;
-    private double income;
-    private  double profit;
-    public  BussinessMan(){
-
-    }
-    public  BussinessMan(String name, int age, char gender, String residentialType,
-                         String cityName, String locationName, String occupationType,
-                         int cityId,String companyName , int employeeNumber, double income , double profit){
-        super(name,age,gender,residentialType,cityName,locationName,occupationType,cityId);
-        this.companyName  =companyName;
-        this.employeeNumber = employeeNumber;
-        this.income  =income;
-        this.profit = profit;
-    }
-    public String  getCompanyName(){
-        return  this.companyName;
-    }
-    public void setCompanyName(String companyName){
-        this.companyName = companyName;
-    }
-    public  int getEmployeeNumber(){
-        return  this.employeeNumber;
-    }
-    public  void  setEmployeeNumber(int employeeNumber){
-        this.employeeNumber = employeeNumber;
-    }
-    public double getIncome(){
-        return this.income;
-    }
-    public  void  setIncome(double income){
-        this.income = income;
-    }
-    public  double getProfit(){
-        return  this.profit;
-    }
-    public  void setProfit(double profit){
-        this.profit  =profit;
-    }
-
-}
-
 // doctor class
 
  class Doctor extends  Urban {
@@ -548,37 +476,9 @@ this.payment= payment;
 //college class
 
 
- class College extends  Teacher {
-
-    private  String  collegeName;
-    private  String subjectName;
-    public  College(){
-
-    }
-    public  College(String name, int age, char gender, String residentialType,
-                    String cityName, String locationName, String occupationType,
-                    int cityId,int experience , String  qualification , double payment,String  collegeName ,String  subjectName){
-        super(name,age,gender,residentialType,cityName,locationName,occupationType,cityId,experience,qualification,payment);
-this.collegeName =collegeName;
-this.subjectName = subjectName;
-    }
-    public  String getCollegeName(){
-        return  collegeName;
-    }
-    public  void  setCollegeName(String collegeName){
-        this.collegeName  =collegeName;
-    }
-    public  String getSubjectName(){
-        return subjectName;
-    }
-    public  void  setSubjectName(String subjectName){
-        this.subjectName = subjectName;
-    }
-}
-
 // university class
 
- class University extends  Teacher {
+public class University extends  Teacher {
 
     private  String universityName;
     private  String departmentName;
