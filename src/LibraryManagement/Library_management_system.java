@@ -256,86 +256,11 @@ public class Library  extends JFrame{
 //author class
 
 package AccountManagementSystem;
-public class Author {
-
-
-    private String name;
-    private String email;
-    private char gender;
-
-    public  Author(String name , String email , char gender){
-
-        this.name = name;
-        this.email = email;
-        this.gender = gender;
-    }
-
-    public String getName(){
-        return name;
-    }
-    public String getEmail(){
-        return email;
-    }
-    public char getGender(){
-        return gender;
-    }
-    public String toString(){
-        return "Author Name : "+getName()+"\nAuthor Email : "+getEmail()+"\nAuthor Gender : "+getGender();
-    }
-
-
-}
 
 
 //book class
 
 package AccountManagementSystem;
-
-public class Book {
-
-    private String name;
-    Author author ;
-
-    private double price;
-    private  int qty=0;
-    public Book(String name , Author author , double price){
-        this.name = name;
-        this.author = author;
-        this.price = price;
-    }
-    public Book(String name , Author author , double price,int qty){
-        this.name = name;
-        this.author = author;
-        this.price = price;
-        this.qty  =qty;
-    }
-
-    public String getName(){
-        return name;
-    }
-    public Author getAuthor(){
-        return author;
-    }
-
-    public double getPrice(){
-        return price;
-    }
-    public void setPrice(double price){
-        this.price = price;
-    }
-    public  int getQty(){
-        return qty;
-    }
-    public void setQty(int qty){
-        this.qty = qty;
-    }
-
-    public String toString(){
-        return "Book Name : "+getName()+"\n"+getAuthor()+"\n"+"Book Price : "+getPrice()+"\n"+"Number of Books : "+getQty();
-    }
-
-
-}
 
 
 //Library Member Class
@@ -472,57 +397,11 @@ public class RegisterMember extends  LibraryMember {
 //Executive Member Class
 package AccountManagementSystem;
 
-public class ExecutiveMember extends RegisterMember {
-private String title;
-
-    ExecutiveMember(String name  , String type,  String accountNumber,String title){
-super(name,type,accountNumber);
-this.title = title;
-    }
-
-    public String getTitle(){
-        return title;
-    }
-}
-
 
 // Book Management
 
 
 package AccountManagementSystem;
-
-public class BookManagement {
-
-
-
-    public   Author author_array[] = new Author[10];
-    public  Book book_array[] = new Book[7];
-    public  static int initial =6;
-
-    public void seminar_library(){
-
-
-        author_array[0]= new Author("Jafar Iqbal","jafar@sust.ac.bd",'m');
-        author_array[1]= new Author("Humayon Ahmed","hm@du.ac.bd",'m');
-        author_array[2]= new Author("Selina Hossain","selina@ru.ac.bd",'f');
-        author_array[3]= new Author("Anisul Haque","anisul@buet.ac.bd",'m');
-        author_array[4]= new Author("Imdadul Haque Milon","milon@jnu.ac.bd",'m');
-        author_array[5]= new Author("Anisuzzaman","anisuzzaman@du.ac.bd",'m');
-        author_array[6]= new Author("Ahsan Habib","habib@du.ac.bd",'m');
-
-
-        book_array[0] = new Book("Ami topu",author_array[0],350.0,16);
-        book_array[1] = new Book("Misir Ali",author_array[1],400.0,12);
-        book_array[2] = new Book("Ekattor er Chithi",author_array[2],290.0,6);
-        book_array[3] = new Book("Ma",author_array[3],420.0,10);
-        book_array[4] = new Book("Kaloghora",author_array[4],370.0,8);
-        book_array[5] = new Book("Jadughar",author_array[5],280.0,16);
-        book_array[6]= new Book("First Second Third",author_array[6],400.0,12);
-
-
-
-    }
-}
 
 
 //Book Self
@@ -539,143 +418,4 @@ import java.awt.event.ActionListener;
         import java.awt.*;
         import java.awt.event.*;
 import java.sql.SQLOutput;
-
-public class BookSelf extends JFrame {
-    private Container descrip;
-    private JLabel img_label,text_label;
-    private JTextArea text_area;
-    private JTextField text_field,text_field2;
-    private JButton button,button1,button2;
-    private JScrollPane jScrollPane;
-    private ImageIcon image;
-    private Font front_style,front_style2;
-    private Cursor cursor;
-
-    public   BookSelf()
-    {
-        int width =350 ;
-        int height =350 ;
-        descrip  = this.getContentPane();
-        descrip.setLayout(null);
-        descrip.setBackground(Color.black);
-        front_style = new Font("Style",Font.BOLD,20);
-        front_style2 = new Font("Style1",Font.BOLD,15);
-       /* image = new ImageIcon(getClass().getResource("MATH.jpg"));
-        img_label = new JLabel(image);
-        img_label.setBounds(0,0,width,height-45);
-        descrip.add(img_label);*/
-        text_label =new JLabel("Book Self :");
-        text_label.setBounds(width,0,(900-width)/2,(height-45)/2);
-        text_label.setForeground(Color.BLUE);
-        text_label.setOpaque(true);
-        text_label.setBackground(Color.RED);
-        text_label.setFont(front_style);
-        descrip.add(text_label);
-
-       /* text_field = new JTextField();
-        text_field.setBounds(width+(900-width)/2,0,(900-width)/2,(height-45)/2);
-        text_field.setForeground(Color.black);
-        text_field.setOpaque(true);
-        text_field.setBackground(Color.CYAN);
-        text_field.setFont(front_style);
-        text_field.setHorizontalAlignment(JTextField.CENTER);
-        descrip.add(text_field);*/
-
-        cursor = new Cursor(Cursor.HAND_CURSOR);
-        button = new JButton("Clear");
-        button.setBounds(0,height-200,120,75);
-        button.setForeground(Color.WHITE);
-        button.setCursor(cursor);
-        button.setOpaque(true);
-        button.setBackground(Color.MAGENTA);
-        button.setFont(front_style2);
-        descrip.add(button);
-
-        cursor = new Cursor(Cursor.HAND_CURSOR);
-        button1 = new JButton("Close");
-        button1.setBounds(200,height-200,120,75);
-        button1.setForeground(Color.WHITE);
-        button1.setCursor(cursor);
-        button1.setOpaque(true);
-        button1.setBackground(Color.BLUE);
-        button1.setFont(front_style2);
-        descrip.add(button1);
-
-        cursor = new Cursor(Cursor.HAND_CURSOR);
-        button2 = new JButton("Book Self");
-        button2.setBounds(width+(900-width)/2,0,(900-width)/2,(height-45)/2);
-        button2.setForeground(Color.WHITE);
-        button2.setCursor(cursor);
-        button2.setOpaque(true);
-        button2.setBackground(Color.BLUE);
-        button2.setFont(front_style2);
-        descrip.add(button2);
-
-        text_area = new JTextArea();
-        text_area.setBounds(450,200,600,600);
-        text_area.setFont(front_style);
-        text_area.setForeground(Color.black);
-        text_area.setOpaque(true);
-        text_area.setBackground(Color.GREEN);
-        descrip.add(text_area);
-
-       JScrollPane jScrollPane = new JScrollPane(text_area);
-        jScrollPane.setBounds(450,200,600,600);
-        descrip.add(jScrollPane);
-        button2.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent e) {
-               /* String get_value = text_field.getText();
-                if (get_value.isEmpty()) {
-                    text_area.setText("Please Enter an integer value .");
-                }
-                else {*/
-
-                   text_area.setText("Books are :");
-                   /* int number = Integer.parseInt(text_field.getText());
-                    int iterator, calculation;
-                    String get_number, get_iterator, get_calculation;
-                    for (iterator = 1; iterator <= 10; iterator++) {
-                        calculation = number * iterator;
-
-                        get_calculation = String.valueOf(calculation);
-                        get_number = String.valueOf(number);
-                        get_iterator = String.valueOf(iterator);
-                          }*/
-                    Library explore = new Library();
-                BookManagement bookManagement = new BookManagement();
-
-                bookManagement.seminar_library();
-                    String technology = explore.show_book2();
-                    text_area.append(technology);
-
-               /* }*/
-
-            }
-        });
-
-        button.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent e) {
-                text_area.setText("");
-            }
-        });
-
-        button1.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
-    }
-
-    public static void main(String[] args){
-
-        BookSelf frame = new BookSelf();
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        frame.setTitle("Operation Overdrive");
-        frame.setBounds(100,0,900,800);
-    }
-}
 
