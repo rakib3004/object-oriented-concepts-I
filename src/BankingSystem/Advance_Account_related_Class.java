@@ -101,7 +101,7 @@ public class Account {
 }
 
 
-public class BankingSystem {
+class BankingSystem {
     public static void main(String[] args) {
 
         UserMenu pickpoint = new UserMenu();
@@ -132,9 +132,7 @@ public class BankingSystem {
 
 
 
-package UserSection;
-        import javax.swing.*;
-public class BankMenu {
+ class BankMenu {
     Account array_0f_account[] = new Account[8];
     int iterator;
     int count=0,flag=0;
@@ -277,13 +275,9 @@ public class BankMenu {
     }
 }
 
-package UserSection;
-        import jdk.nashorn.internal.scripts.JO;
 
-        import javax.swing.*;
-        import java.beans.PropertyVetoException;
 
-public class UserMenu {
+ class UserMenu {
     private boolean control=true;
 
     public void controlller() {

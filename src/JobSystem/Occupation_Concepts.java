@@ -11,9 +11,7 @@ public class MainClass {
 
 //person class
 
-package Occupation;
-
-public class Person {
+ class Person {
     private String name;
     private int age;
     private char gender;
@@ -61,9 +59,8 @@ public class Person {
 
 // urban class
 
-package Occupation;
 
-public class Urban extends Person {
+ class Urban extends Person {
     private String cityName;
     private String locationName;
     private String occupationType;
@@ -116,9 +113,8 @@ public class Urban extends Person {
 
 //rural class
 
-package Occupation;
 
-public class Rural extends  Person{
+ class Rural extends  Person{
     private String districtName;
     private  String villageName;
     private String occupationName;
@@ -156,9 +152,8 @@ public class Rural extends  Person{
 
 //farmer class
 
-package Occupation;
 
-public class Farmer extends  Rural {
+ class Farmer extends  Rural {
 
     private  String agriFieldName;
     private double agriArea;
@@ -207,7 +202,6 @@ public class Farmer extends  Rural {
 
 //agri_bussiness class
 
-package Occupation;
 
 public class AgriBussiness extends Rural {
     private String bussinessType;
