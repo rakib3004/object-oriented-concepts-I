@@ -1,6 +1,6 @@
 package src.RetailSystem;
 
-import E_Shop_Management.*;
+
 
 import javax.swing.JOptionPane;
 
@@ -26,12 +26,7 @@ public class MainClass {
 }
 
 
-
-
-
-package E_Shop_Management;
-
-public abstract class Person {
+ abstract class Person {
 
     private String name ;
 
@@ -48,9 +43,8 @@ public abstract class Person {
 
 
 
-package E_Shop_Management;
 
-public abstract class Customer extends Person {
+ abstract class Customer extends Person {
 
     private String address ;
     private double budget;
@@ -72,9 +66,8 @@ public abstract class Customer extends Person {
 }
 
 
-package E_Shop_Management;
 
-public abstract class Employee extends Person {
+ abstract class Employee extends Person {
 
     private String employee_number;
     private double basic_salary;
@@ -96,9 +89,8 @@ return this.employee_number;
 
 
 
-package E_Shop_Management;
 
-public class Manager extends Employee {
+ class Manager extends Employee {
     private double allowance;
     public Manager(String employee_number,double basic_salary,String name,float allowance){
         super(employee_number,basic_salary,name);
@@ -115,9 +107,7 @@ public class Manager extends Employee {
 }
 
 
-package E_Shop_Management;
-
-public class SalesPerson extends Employee {
+ class SalesPerson extends Employee {
     private double commission;
 
     public SalesPerson(String employee_number,double basic_salary,String name,double commission) {
@@ -138,10 +128,7 @@ public class SalesPerson extends Employee {
 }
 
 
-
-package E_Shop_Management;
-
-public class Secretary  extends Employee{
+ class Secretary  extends Employee{
     public Secretary(String employee_number,double basic_salary,String name) {
         super(employee_number, basic_salary, name);
     }

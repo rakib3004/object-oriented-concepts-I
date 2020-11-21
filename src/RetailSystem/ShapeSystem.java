@@ -2,9 +2,6 @@
 
 package src.RetailSystem;
 
-import ShapeSystem.MyCircle;
-import ShapeSystem.MyPoint;
-import ShapeSystem.MyTriangle;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,11 +24,8 @@ System.exit(0);
 
 //MyCircle Class
 
-package ShapeSystem;
 
-import javafx.scene.shape.Shape;
-
-public      class MyCircle   {
+class MyCircle   {
     private   MyPoint center  = new MyPoint(0,0);
    private  int radius = 1;
    private  int x;
@@ -123,13 +117,8 @@ this.x = x;
 
 //MyTriangle Class
 
-package ShapeSystem;
 
-import jdk.nashorn.internal.scripts.JO;
-
-import javax.swing.*;
-
-public  class MyTriangle extends Shape  {
+  class MyTriangle extends Shape  {
     MyTriangle array_of_point [] = new MyTriangle[4];
     MyCircle array_of_point2 [] = new MyCircle[3];
     MyPoint points[] = new MyPoint[6];

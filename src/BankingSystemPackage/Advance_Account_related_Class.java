@@ -1,6 +1,6 @@
 package src.BankingSystemPackage;
 import javax.swing.*;
-public class Account {
+public class AccountSystem {
     private int  accountHolderNumber ;
     private  String accountHolderName;
     private   String accountHolderNID;
@@ -15,11 +15,11 @@ public class Account {
         this.accountHolderNumber =   account_starting_range + accountCounter;
     }
 
-    public Account(){
+    public AccountSystem(){
 
     }
 
-    public  Account(String name ,String address ,String phone){
+    public AccountSystem(String name , String address , String phone){
         this.accountHolderName =name;
         this.accountHolderAddress = address;
         this.accountHolderPhone = phone;
@@ -28,7 +28,7 @@ public class Account {
         account_number_generator();
         this.balance =5000.0 +accountCounter*500.0;
     }
-    public  Account(String name ,String address ,String phone,String user_NID){
+    public AccountSystem(String name , String address , String phone, String user_NID){
         this.accountHolderName =name;
         this.accountHolderAddress = address;
         this.accountHolderPhone = phone;
@@ -38,7 +38,7 @@ public class Account {
         this.balance =5000.0+accountCounter*500.0;
     }
 
-    public Account(String name ,String address ,String phone,String photo , String user_NID){
+    public AccountSystem(String name , String address , String phone, String photo , String user_NID){
         this.accountHolderName =name;
         this.accountHolderAddress = address;
         this.accountHolderPhone = phone;
@@ -133,7 +133,7 @@ class BankingSystemAutomation {
 
 
  class BankMenu {
-    Account array_0f_account[] = new Account[8];
+    AccountSystem array_0F_accountSystem[] = new AccountSystem[8];
     int iterator;
     int count=0,flag=0;
     double amount;
@@ -142,14 +142,14 @@ class BankingSystemAutomation {
     private static int parameter = 7;
     int inputAccountNumber;
     public  void set_account(){
-        array_0f_account[0] = new Account("Zidan", "ME_IUT", "110962", "@zidan", "Mechanical");
-        array_0f_account[1] = new Account("Wasif", "CSE_JU", "110975", "@wasif", "Computer Science");
-        array_0f_account[2] = new Account("Azim", "SWE_KU", "110964", "@azim", "Soil & Water");
-        array_0f_account[3] = new Account("Rakib", "IIT_DU", "110965", "@rakib", "Software");
-        array_0f_account[4] = new Account("Mahmud", "CE_BUET", "110966", "@mahmud", "Civil");
-        array_0f_account[5] = new Account("Alif", "CSE_KUET", "110968", "@alif", "Computer Science");
-        array_0f_account[6] = new Account("Tahmeed", "IIT_DU", "110969", "@tahmeed", "Software");
-        array_0f_account[7] = new Account("Shifat","CSE_KUET","110971","@shifat","Computer Science");
+        array_0F_accountSystem[0] = new AccountSystem("Zidan", "ME_IUT", "110962", "@zidan", "Mechanical");
+        array_0F_accountSystem[1] = new AccountSystem("Wasif", "CSE_JU", "110975", "@wasif", "Computer Science");
+        array_0F_accountSystem[2] = new AccountSystem("Azim", "SWE_KU", "110964", "@azim", "Soil & Water");
+        array_0F_accountSystem[3] = new AccountSystem("Rakib", "IIT_DU", "110965", "@rakib", "Software");
+        array_0F_accountSystem[4] = new AccountSystem("Mahmud", "CE_BUET", "110966", "@mahmud", "Civil");
+        array_0F_accountSystem[5] = new AccountSystem("Alif", "CSE_KUET", "110968", "@alif", "Computer Science");
+        array_0F_accountSystem[6] = new AccountSystem("Tahmeed", "IIT_DU", "110969", "@tahmeed", "Software");
+        array_0F_accountSystem[7] = new AccountSystem("Shifat","CSE_KUET","110971","@shifat","Computer Science");
 
     }
     public void account_initialization() {
@@ -161,7 +161,7 @@ class BankingSystemAutomation {
         photo = JOptionPane.showInputDialog("User Photo");
         user_NID = JOptionPane.showInputDialog("User user_NID");
 
-        array_0f_account[parameter] = new Account(name, address, phone, photo, user_NID);
+        array_0F_accountSystem[parameter] = new AccountSystem(name, address, phone, photo, user_NID);
         String user_details_message = "Name :" + name +"\n"+
                 "Address :"+ address +"\n"+
                 "Phone Number : "+  phone +"\n"+
@@ -169,8 +169,8 @@ class BankingSystemAutomation {
                 "Holder Photo :"+  photo ;
         JOptionPane.showMessageDialog(null, user_details_message );
         JOptionPane.showMessageDialog(null,"Account created successfully");
-        JOptionPane.showMessageDialog(null,array_0f_account[parameter].checkAccountNumber());
-        JOptionPane.showMessageDialog(null,"Your account balance is "+array_0f_account[parameter].checkBalance());
+        JOptionPane.showMessageDialog(null, array_0F_accountSystem[parameter].checkAccountNumber());
+        JOptionPane.showMessageDialog(null,"Your account balance is "+ array_0F_accountSystem[parameter].checkBalance());
         parameter++;
         bank.recursive_menu();
     }
@@ -179,9 +179,9 @@ class BankingSystemAutomation {
         String get_roll_string = JOptionPane.showInputDialog("Find the account number : ");
         inputAccountNumber = Integer.parseInt(get_roll_string);
 
-        for( count =0;array_0f_account[count]!=null;count++){
-            JOptionPane.showMessageDialog(null, array_0f_account[count].checkAccountNumber());
-            if(array_0f_account[count].checkAccountNumber()==inputAccountNumber){
+        for(count =0; array_0F_accountSystem[count]!=null; count++){
+            JOptionPane.showMessageDialog(null, array_0F_accountSystem[count].checkAccountNumber());
+            if(array_0F_accountSystem[count].checkAccountNumber()==inputAccountNumber){
                 iterator = count;
                 flag=1;
                 break;
@@ -189,7 +189,7 @@ class BankingSystemAutomation {
         }
         if(flag==1){
 
-            JOptionPane.showMessageDialog(null ,array_0f_account[iterator].checkAccountHolderDetails());
+            JOptionPane.showMessageDialog(null , array_0F_accountSystem[iterator].checkAccountHolderDetails());
         }
         else{
             JOptionPane.showMessageDialog(null,"Account not found");
@@ -200,9 +200,9 @@ class BankingSystemAutomation {
         String get_roll_string = JOptionPane.showInputDialog("Find the account number : ");
         inputAccountNumber = Integer.parseInt(get_roll_string);
 
-        for( count =0;array_0f_account[count]!=null;count++){
-            JOptionPane.showMessageDialog(null, array_0f_account[count].checkAccountNumber());
-            if(array_0f_account[count].checkAccountNumber()==inputAccountNumber){
+        for(count =0; array_0F_accountSystem[count]!=null; count++){
+            JOptionPane.showMessageDialog(null, array_0F_accountSystem[count].checkAccountNumber());
+            if(array_0F_accountSystem[count].checkAccountNumber()==inputAccountNumber){
                 iterator = count;
                 flag=1;
                 break;
@@ -211,7 +211,7 @@ class BankingSystemAutomation {
         if(flag==1){
             input_from_user =   JOptionPane.showInputDialog("Enter Deposit money :");
             amount = Double.parseDouble(input_from_user);
-            array_0f_account[iterator].deposit(amount);
+            array_0F_accountSystem[iterator].deposit(amount);
         }
         else{
             JOptionPane.showMessageDialog(null,"Account not found");
@@ -222,9 +222,9 @@ class BankingSystemAutomation {
         String get_roll_string = JOptionPane.showInputDialog("Find the account number : ");
         inputAccountNumber = Integer.parseInt(get_roll_string);
 
-        for( count =0;array_0f_account[count]!=null;count++){
-            JOptionPane.showMessageDialog(null, array_0f_account[count].checkAccountNumber());
-            if(array_0f_account[count].checkAccountNumber()==inputAccountNumber){
+        for(count =0; array_0F_accountSystem[count]!=null; count++){
+            JOptionPane.showMessageDialog(null, array_0F_accountSystem[count].checkAccountNumber());
+            if(array_0F_accountSystem[count].checkAccountNumber()==inputAccountNumber){
                 iterator = count;
                 flag=1;
                 break;
@@ -233,7 +233,7 @@ class BankingSystemAutomation {
         if(flag==1){
             input_from_user =   JOptionPane.showInputDialog("Enter Deposit money :");
             amount = Double.parseDouble(input_from_user);
-            array_0f_account[iterator].withdraw(amount);
+            array_0F_accountSystem[iterator].withdraw(amount);
         }
         else{
             JOptionPane.showMessageDialog(null,"Account not found");
@@ -245,9 +245,9 @@ class BankingSystemAutomation {
         String get_roll_string = JOptionPane.showInputDialog("Find the account number : ");
         inputAccountNumber = Integer.parseInt(get_roll_string);
 
-        for( count =0;array_0f_account[count]!=null;count++){
-            JOptionPane.showMessageDialog(null, array_0f_account[count].checkAccountNumber());
-            if(array_0f_account[count].checkAccountNumber()==inputAccountNumber){
+        for(count =0; array_0F_accountSystem[count]!=null; count++){
+            JOptionPane.showMessageDialog(null, array_0F_accountSystem[count].checkAccountNumber());
+            if(array_0F_accountSystem[count].checkAccountNumber()==inputAccountNumber){
                 iterator = count;
                 flag=1;
                 break;
@@ -255,7 +255,7 @@ class BankingSystemAutomation {
         }
         if(flag==1){
 
-            array_0f_account[iterator].checkBalance();
+            array_0F_accountSystem[iterator].checkBalance();
         }
         else{
             JOptionPane.showMessageDialog(null,"Account not found");
@@ -265,10 +265,10 @@ class BankingSystemAutomation {
     public void all_info_show(){
         JOptionPane.showMessageDialog(null,"Welcome to Database");
 
-        JOptionPane.showMessageDialog(null, array_0f_account[0].checkAccountHolderDetails());
+        JOptionPane.showMessageDialog(null, array_0F_accountSystem[0].checkAccountHolderDetails());
         for(int iterator1 = 0;iterator1<=7;iterator1++){
 
-            JOptionPane.showMessageDialog(null, array_0f_account[iterator1].checkAccountHolderDetails());
+            JOptionPane.showMessageDialog(null, array_0F_accountSystem[iterator1].checkAccountHolderDetails());
         }
         bank.recursive_menu();
 
@@ -289,7 +289,7 @@ class BankingSystemAutomation {
     private void  Interaction() {
 
         BankMenu creat_menu = new BankMenu();
-        Account show_info = new Account();
+        AccountSystem show_info = new AccountSystem();
         BankingSystemAutomation bank =new BankingSystemAutomation();
         double amount;
         String string_one,string_two,string_three;
