@@ -35,48 +35,7 @@ public class ShoppingSys {
 
 }
 
- abstract class Customer extends Person {
-
-    private String address ;
-    private double budget;
-    public Customer(String  name,String address,double budget){
-        super(name);
-        this.address = address;
-        this.budget  = budget;
-    }
-    public String getAddress() {
-        return address;
-    }
-
-    public double getBudget() {
-        return budget;
-    }
-    public void purchase(){
-
-    }
-}
-
- abstract class Employee extends Person {
-
-    private String employee_number;
-    private double basic_salary;
-    public Employee(String employee_number,double basic_salary,String name){
-        super(name);
-        this.employee_number = employee_number;
-        this.basic_salary =basic_salary;
-    }
-
-    public String getEmployee_number(){
-return this.employee_number;
-    }
-
-    public double getBasic_salary() {
-        return this.basic_salary;
-    }
-  public   abstract double getPay();
-}
-
- class Manager extends Employee {
+class Manager extends Employee {
     private double allowance;
     public Manager(String employee_number,double basic_salary,String name,float allowance){
         super(employee_number,basic_salary,name);
