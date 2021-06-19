@@ -1,18 +1,18 @@
 package src.JobSystem;
 
-class BussinessMan extends Urban {
+class BusinessMan extends Urban {
     private String companyName;
     private int employeeNumber;
     private double income;
     private double profit;
 
-    public BussinessMan() {
+    public BusinessMan() {
 
     }
 
-    public BussinessMan(String name, int age, char gender, String residentialType,
-                        String cityName, String locationName, String occupationType,
-                        int cityId, String companyName, int employeeNumber, double income, double profit) {
+    public BusinessMan(String name, int age, char gender, String residentialType,
+                       String cityName, String locationName, String occupationType,
+                       int cityId, String companyName, int employeeNumber, double income, double profit) {
         super(name, age, gender, residentialType, cityName, locationName, occupationType, cityId);
         this.companyName = companyName;
         this.employeeNumber = employeeNumber;
