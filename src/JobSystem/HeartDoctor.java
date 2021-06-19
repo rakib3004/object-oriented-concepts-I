@@ -1,4 +1,4 @@
 package src.JobSystem;
 
-public class HeartDoctor {
+public class HeartDoctor extends Doctor{
 }

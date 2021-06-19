@@ -1,4 +1,4 @@
 package src.JobSystem;
 
-public class FruitField {
+public class FruitField extends Farmer {
 }
