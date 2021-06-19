@@ -14,6 +14,11 @@ public class DataBase {
    -Business Man
    -Govt Officer
 
+   Doctor are three types.
+   -Medicine Doctor
+   -Women Doctor
+   -Heart Doctor
+
 
    Teacher are two types.
    -College Teacher
@@ -24,9 +29,15 @@ public class DataBase {
     -Farmer
     -Agricultural Business
 
-   Agricultural Business are two types.
+   Agricultural Business are three types.
    -Dairy Farm
    -Paultry Farm
+   -Fish Farm
+
+   Farmer are three types.
+   -RiceField
+   -VegetableField
+   -FruitField
 
      */
 }

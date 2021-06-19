@@ -1,4 +1,4 @@
 package src.JobSystem;
 
-public class SoftwareBusiness {
+public class SoftwareBusiness extends BusinessMan{
 }
